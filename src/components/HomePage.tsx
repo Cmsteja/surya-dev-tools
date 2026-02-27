@@ -1,8 +1,10 @@
 interface HomePageProps {
   onOpenDiffChecker: () => void;
+  onOpenQRGenerator: () => void;
+  onOpenJsonFormatter: () => void;
 }
 
-export function HomePage({ onOpenDiffChecker }: HomePageProps) {
+export function HomePage({ onOpenDiffChecker, onOpenQRGenerator, onOpenJsonFormatter }: HomePageProps) {
   const tools = [
     {
       id: 'diff-checker',
@@ -16,6 +18,32 @@ export function HomePage({ onOpenDiffChecker }: HomePageProps) {
       color: 'bg-blue-600',
       hoverColor: 'hover:bg-blue-700',
       onClick: onOpenDiffChecker,
+    },
+    {
+      id: 'qr-generator',
+      title: 'QR Generator',
+      description: 'Paste a URL and instantly generate a QR code that can be downloaded as an image.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 4h2m2 0h2m-6-4h2m2 0h2m-2 2v2" />
+        </svg>
+      ),
+      color: 'bg-emerald-600',
+      hoverColor: 'hover:bg-emerald-700',
+      onClick: onOpenQRGenerator,
+    },
+    {
+      id: 'json-formatter',
+      title: 'JSON Formatter',
+      description: 'Format, minify, escape, unescape JSON and query nested values using path syntax.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 4H6a2 2 0 00-2 2v2m0 8v2a2 2 0 002 2h2m8-16h2a2 2 0 012 2v2m0 8v2a2 2 0 01-2 2h-2M9 9h6m-6 3h6m-6 3h6" />
+        </svg>
+      ),
+      color: 'bg-indigo-600',
+      hoverColor: 'hover:bg-indigo-700',
+      onClick: onOpenJsonFormatter,
     },
     // Add more tools here in the future
   ];

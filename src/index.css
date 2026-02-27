@@ -10,6 +10,76 @@ body {
   @apply bg-gray-50 text-gray-900 antialiased;
 }
 
+html.dark body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+html.dark .bg-white {
+  @apply bg-gray-900;
+}
+
+html.dark .bg-gray-50 {
+  @apply bg-gray-900;
+}
+
+html.dark .bg-gray-100 {
+  @apply bg-gray-950;
+}
+
+html.dark .bg-gray-200 {
+  @apply bg-gray-700;
+}
+
+html.dark .text-gray-900 {
+  @apply text-gray-100;
+}
+
+html.dark .text-gray-800 {
+  @apply text-gray-200;
+}
+
+html.dark .text-gray-700 {
+  @apply text-gray-200;
+}
+
+html.dark .text-gray-600 {
+  @apply text-gray-300;
+}
+
+html.dark .text-gray-500 {
+  @apply text-gray-400;
+}
+
+html.dark .border-gray-200 {
+  @apply border-gray-700;
+}
+
+html.dark .border-gray-300 {
+  @apply border-gray-600;
+}
+
+html.dark .hover\:bg-gray-50:hover {
+  @apply bg-gray-800;
+}
+
+html.dark .hover\:bg-gray-100:hover {
+  @apply bg-gray-800;
+}
+
+html.dark .hover\:border-gray-300:hover {
+  @apply border-gray-500;
+}
+
+html.dark .from-gray-50 {
+  --tw-gradient-from: rgb(3 7 18) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(3 7 18 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html.dark .to-gray-100 {
+  --tw-gradient-to: rgb(2 6 23) var(--tw-gradient-to-position);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -22,6 +92,14 @@ body {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 hover:bg-gray-500;
 }
 
 /* Loading animation */
