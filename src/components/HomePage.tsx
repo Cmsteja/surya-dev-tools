@@ -2,9 +2,10 @@ interface HomePageProps {
   onOpenDiffChecker: () => void;
   onOpenQRGenerator: () => void;
   onOpenJsonFormatter: () => void;
+  onOpenDependencyTreeExplorer: () => void;
 }
 
-export function HomePage({ onOpenDiffChecker, onOpenQRGenerator, onOpenJsonFormatter }: HomePageProps) {
+export function HomePage({ onOpenDiffChecker, onOpenQRGenerator, onOpenJsonFormatter, onOpenDependencyTreeExplorer }: HomePageProps) {
   const tools = [
     {
       id: 'diff-checker',
@@ -44,6 +45,19 @@ export function HomePage({ onOpenDiffChecker, onOpenQRGenerator, onOpenJsonForma
       color: 'bg-indigo-600',
       hoverColor: 'hover:bg-indigo-700',
       onClick: onOpenJsonFormatter,
+    },
+    {
+      id: 'dependency-tree-explorer',
+      title: 'Dependency Tree Explorer',
+      description: 'Paste your npm/yarn/pip dependency tree and explore with expandable dropdowns to see where each dependency comes from.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      ),
+      color: 'bg-purple-600',
+      hoverColor: 'hover:bg-purple-700',
+      onClick: onOpenDependencyTreeExplorer,
     },
     // Add more tools here in the future
   ];

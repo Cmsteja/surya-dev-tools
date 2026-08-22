@@ -3,14 +3,16 @@ import { HomePage } from './components/HomePage';
 import { DiffChecker } from './components/DiffChecker';
 import { QRGenerator } from './components/QRGenerator';
 import { JsonFormatter } from './components/JsonFormatter';
+import { DependencyTreeExplorer } from './components/DependencyTreeExplorer';
 
-type View = 'home' | 'diff-checker' | 'qr-generator' | 'json-formatter';
+type View = 'home' | 'diff-checker' | 'qr-generator' | 'json-formatter' | 'dependency-tree-explorer';
 type ThemeMode = 'light' | 'dark';
 
 function viewFromPath(path: string): View {
   if (path.startsWith('/json-diff-checker')) return 'diff-checker';
   if (path.startsWith('/qr-generator')) return 'qr-generator';
   if (path.startsWith('/json-formatter')) return 'json-formatter';
+  if (path.startsWith('/dependency-tree-explorer')) return 'dependency-tree-explorer';
   return 'home';
 }
 
@@ -43,6 +45,9 @@ function App() {
         break;
       case 'json-formatter':
         path = '/json-formatter';
+        break;
+      case 'dependency-tree-explorer':
+        path = '/dependency-tree-explorer';
         break;
       default:
         path = '/';
@@ -86,6 +91,7 @@ function App() {
           onOpenDiffChecker={() => navigate('diff-checker')}
           onOpenQRGenerator={() => navigate('qr-generator')}
           onOpenJsonFormatter={() => navigate('json-formatter')}
+          onOpenDependencyTreeExplorer={() => navigate('dependency-tree-explorer')}
         />
       )}
       {currentView === 'diff-checker' && (
@@ -96,6 +102,9 @@ function App() {
       )}
       {currentView === 'json-formatter' && (
         <JsonFormatter onBack={() => navigate('home')} />
+      )}
+      {currentView === 'dependency-tree-explorer' && (
+        <DependencyTreeExplorer onBack={() => navigate('home')} />
       )}
     </>
   );
